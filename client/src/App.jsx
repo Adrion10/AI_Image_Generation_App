@@ -1,9 +1,13 @@
 import React from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import { logo } from "./assets";
+import { Home, CreatePost } from "./pages";
 
 const App = () => {
-  return <h1 className="text-3xl font bold underline">helllloo</h1>;
+  return;
+  <BrowserRouter>
+    <header claseName="w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]"></header>
+  </BrowserRouter>;
 };
 
 export default App;
