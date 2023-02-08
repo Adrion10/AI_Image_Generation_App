@@ -4,6 +4,7 @@ import { Loader, Card, FormField } from "../components";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [allPost, setAllPost] = useState([null]);
+  const [searchText, setSearchText] = useState("");
   return (
     <section className="max-w-7xl mx-auto">
       <div>
@@ -17,6 +18,15 @@ const Home = () => {
       </div>
       <div className="mt-16">
         <FormField />
+      </div>
+      <div className="mt-10">
+        {loading ? (
+          <div className="flex justify-center items-center">
+            <Loader />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );
