@@ -49,7 +49,13 @@ const Home = () => {
               xs:grid-cols-2
               grid-cols-1
               gap-3"
-            ></div>
+            >
+              {searchText ? (
+                <RendersCards data={[]} title="No results Found" />
+              ) : (
+                <RendersCards data={[]} title="No Post found" />
+              )}
+            </div>
           </>
         )}
       </div>
