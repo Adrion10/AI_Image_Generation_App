@@ -6,6 +6,11 @@ import { FormField, Loader } from "componenets";
 
 const CreatePost = () => {
   const navigate = useNavigate();
+  const [form, setForm] = useState({
+    name: "",
+    prompt: "",
+    photo: "",
+  });
   return <h1>create post</h1>;
 };
 
