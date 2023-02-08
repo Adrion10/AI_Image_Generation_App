@@ -5,6 +5,7 @@ import { getRandomPromt } from "..utils";
 import { FormField, Loader } from "componenets";
 
 const CreatePost = () => {
+  const navigate = useNavigate();
   return <h1>create post</h1>;
 };
 
