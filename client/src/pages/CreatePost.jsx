@@ -12,7 +12,7 @@ const CreatePost = () => {
     photo: "",
   });
   const [generatingImg, setGeneratingImg] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   return <h1>create post</h1>;
 };
 
