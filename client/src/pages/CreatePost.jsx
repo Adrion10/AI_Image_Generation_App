@@ -11,6 +11,8 @@ const CreatePost = () => {
     prompt: "",
     photo: "",
   });
+  const [generatingImg, setGeneratingImg] = useState(false);
+
   return <h1>create post</h1>;
 };
 
