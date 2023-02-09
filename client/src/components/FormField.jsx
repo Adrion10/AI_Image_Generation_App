@@ -4,7 +4,7 @@ const FormField = ({
   labelName,
   type,
   name,
-  palceholder,
+  placeholder,
   value,
   handleChange,
   isSupriseMe,
@@ -28,6 +28,15 @@ const FormField = ({
             Suprise Me
           </button>
         )}
+        <input
+          type={type}
+          id={name}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+          required
+        />
       </div>
     </div>
   );
