@@ -19,11 +19,15 @@ const FormField = ({
         >
           {labelName}
         </label>
-        <button
-          type="button"
-          onClick={handleSupriseMe}
-          className="font-semibold text-xs bg-[#ececf1]"
-        ></button>
+        {isSupriseMe && (
+          <button
+            type="button"
+            onClick={handleSupriseMe}
+            className="font-semibold text-xs bg-[#ececf1] py-1 px-2 rounded-[5px]text-black"
+          >
+            Suprise Me
+          </button>
+        )}
       </div>
     </div>
   );
