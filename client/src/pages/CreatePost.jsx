@@ -15,6 +15,11 @@ const CreatePost = () => {
   });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const handleSubmit = () => {};
+  const handleChange = (e) => {};
+  const handleSupriseMe = () => {};
+
   return;
   <section className="max-w-7xl mwx-auto">
     <div>
@@ -33,6 +38,16 @@ const CreatePost = () => {
           palceolder="Lace"
           value={form.name}
           handleChange={handleChange}
+        />
+        <FormField
+          labelName="Prompt"
+          type="text"
+          name="prompt"
+          palceolder="A synthwave style sunset above the reflecting water of the sea, digital art"
+          value={form.prompt}
+          handleChange={handleChange}
+          isSupriseMe
+          handleSupriseMe={handleSupriseMe}
         />
       </div>
     </form>
