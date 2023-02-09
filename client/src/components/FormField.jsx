@@ -12,7 +12,12 @@ const FormField = ({
 }) => {
   return (
     <div>
-      <div className="flex item-center gap-2 mb-2"></div>
+      <div className="flex item-center gap-2 mb-2">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-900"
+        ></label>
+      </div>
     </div>
   );
 };
