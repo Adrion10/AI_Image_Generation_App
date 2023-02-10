@@ -21,7 +21,10 @@ const CreatePost = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const handleSupriseMe = () => {};
+  const handleSupriseMe = () => {
+    const randomPrompt = getRandomPrompt(from.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
 
   return;
   <section className="max-w-7xl mwx-auto">
