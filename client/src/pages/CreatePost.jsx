@@ -79,6 +79,13 @@ const CreatePost = () => {
           {generateImage ? "Generating..." : "Generate"}
         </button>
       </div>
+      <div classNmae="mt-10">
+        <p classNmae="mt-2 text-[#666e75] text-[14px]  ">
+          {" "}
+          Once you have create the Image you wont , you can share it with others
+          in the community{" "}
+        </p>
+      </div>
     </form>
   </section>;
 };
