@@ -17,7 +17,10 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {};
-  const handleChange = (e) => {};
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   const handleSupriseMe = () => {};
 
   return;
