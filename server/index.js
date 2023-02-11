@@ -2,6 +2,8 @@ import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 
+import connectDB from "./mongoDB/connect";
+
 dotenv.config();
 
 const app = express();
