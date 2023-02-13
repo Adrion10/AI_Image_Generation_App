@@ -34,6 +34,7 @@ try {
     headers: { 'Content-Type': 'application/json'},
     body:JSON.stringify({prompt:from.prompt}),
   })
+  setForm({...form,photo: `data:image/jpeg;base64,${data.photo}`})
   const data =await response.json()
   
 } catch (error) {
