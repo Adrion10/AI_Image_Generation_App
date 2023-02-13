@@ -19,9 +19,10 @@ router.route("/").post(async (req, res) => {
   const photoUrl = await cloudinary.uploader.uploadr(photo);
   const newPost = await Post.create({
     name,
-    propmt,
+    prompt,
     photo: photoUrl.url,
   });
+  res.status(201).json({ success: true, data: newPost });
 });
 
 export default router;
