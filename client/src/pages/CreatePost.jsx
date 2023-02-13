@@ -38,9 +38,14 @@ try {
   const data =await response.json()
   
 } catch (error) {
-  
+  alert(error)
+}finally{
+  setGeneratingImg(false)
 }
-    }}
+    }else{
+      aleert('Please enter a promt')
+    }
+  }
   };
 
   const handleSubmit = (e) => {};
