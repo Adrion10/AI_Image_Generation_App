@@ -25,53 +25,62 @@ const CreatePost = () => {
     setForm({ ...form, prompt: randomPrompt });
   };
 
-  const generateImage = async() => {
-    if(form.prompt) {
-try {
-  setGeneratingImg(true)
-  const response =await fetch('http://localhost:8080/api/v1/dalle', {
-    method:'POST',
-    headers: { 'Content-Type': 'application/json'},
-    body:JSON.stringify({prompt:from.prompt}),
-  })
-  setForm({...form,photo: `data:image/jpeg;base64,${data.photo}`})
-  const data =await response.json()
-  
-} catch (error) {
-  alert(error)
-}finally{
-  setGeneratingImg(false)
-}
-    }else{
-      aleert('Please enter a promt')
+  const generateImage = async () => {
+    if (form.prompt) {
+      try {
+        setGeneratingImg(true);
+        const response = await fetch(
+          "https://dalle-arbb.onrender.com/api/v1/dalle",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              prompt: form.prompt,
+            }),
+          }
+        );
+
+        const data = await response.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch (err) {
+        alert(err);
+      } finally {
+        setGeneratingImg(false);
+      }
+    } else {
+      alert("Please provide proper prompt");
     }
-  }
   };
 
-  const handleSubmit = async(e) => {
-    e.preventDefault()
-    if(form.prompt && form.photo){
-      setLoading(true)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    if (form.prompt && form.photo) {
+      setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post',{
-          method:"POST",
-          headers:{'Content-Type':'application/json',},
-          body:JSON.stringify(form)
-        })
-        await response.json()
-        navigate('/')
-        
-      } catch (err) {
-        alert(err)
-        
-      }finally{
-        setLoading(false)
-      
-      }
+        const response = await fetch(
+          "https://dalle-arbb.onrender.com/api/v1/post",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ...form }),
+          }
+        );
 
-    }else{
-      alert('Please enter a prompt and genarate a image')
+        await response.json();
+        alert("Success");
+        navigate("/");
+      } catch (err) {
+        alert(err);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert("Please generate an image with proper details");
     }
   };
 
@@ -154,7 +163,7 @@ try {
         </div>
       </form>
     </section>
-  )
+  );
 };
 
 export default CreatePost;
