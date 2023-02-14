@@ -67,6 +67,7 @@ try {
         
       }finally{
         setLoading(false)
+      
       }
 
     }else{
@@ -153,7 +154,7 @@ try {
         </div>
       </form>
     </section>
-  );
+  )
 };
 
 export default CreatePost;
