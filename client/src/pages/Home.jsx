@@ -20,6 +20,12 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
+      try {
+        const response = await fetch('http://localhost:8080/api/v1/post')
+      } catch (error) {
+
+      }finally {
+        setLoading(false)
     };
     fetchPosts();
   }, []);
