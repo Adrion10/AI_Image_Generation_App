@@ -23,9 +23,14 @@ const Home = () => {
       try {
         const response = await fetch('http://localhost:8080/api/v1/post',{
           method:'GET',
-          headers: {'Content-Type': 'application/json'}
+          headers: {'Content-Type': 'application/json'},
         })
+        if(response.ok){
+          const result = await response.json()
+          setAllPost(result.data.reverse())
+        }
       } catch (error) {
+        alert(error)
 
       }finally {
         setLoading(false)
