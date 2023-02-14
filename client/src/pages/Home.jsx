@@ -16,6 +16,13 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [allPost, setAllPost] = useState([null]);
   const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+    };
+    fetchPosts();
+  }, []);
   return (
     <section className="max-w-7xl mx-auto">
       <div>
