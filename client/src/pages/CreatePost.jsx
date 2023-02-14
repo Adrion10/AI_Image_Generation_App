@@ -48,7 +48,13 @@ try {
   }
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    if(form.prompt && form.photo){
+      setLoading(true)
+
+    }
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
