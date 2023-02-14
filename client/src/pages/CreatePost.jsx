@@ -69,6 +69,8 @@ try {
         setLoading(false)
       }
 
+    }else{
+      alert('Please enter a prompt and genarate a image')
     }
   };
 
